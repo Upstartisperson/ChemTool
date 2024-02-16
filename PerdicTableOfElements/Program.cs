@@ -52,7 +52,8 @@ while (true)
     //    char.IsUpper(active);
     //    char.IsNumber(active);
 
-    
+    //hello
+
 
 
     if (inputarray.Length == 0) 
