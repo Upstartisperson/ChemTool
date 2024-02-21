@@ -2,23 +2,27 @@
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
-
-
-
 namespace ChemUtility
 {
     public class PeriodicTable
-	{
+    {
         static string dataPath = "C:\\Users\\Thomas (Purdue)\\source\\repos\\PerdicTableOfElements";
-        private static string[][] table;
-        public string[][] Table { get { return table; } }
+        public static string[][] Table { get; private set; }
+        public static Dictionary<string, int> ElemIndex { get; private set; }
         
+
         PeriodicTable()
         {
             StreamReader sr = new StreamReader(dataPath);
+            ElemIndex = new Dictionary<string, int>();
             string raw = sr.ReadToEnd();
             sr.Close();
-            table = ParseTable(raw);
+            Table = ParseTable(raw);
+            for (int i = 0; i < Table.Length; i++)
+            {
+                ElemIndex.Add(Table[i][(int)DataIndex.AtomicNumber], i);
+                ElemIndex.Add(Table[i][(int)DataIndex.Symbol], i);
+            }
         }
         string[][] ParseTable(string rawInfo)
         {

@@ -26,9 +26,5 @@ namespace ChemUtility.States
             throw new NotImplementedException();
         }
 
-        public override void SendOutput()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

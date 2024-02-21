@@ -13,6 +13,8 @@ using System.Collections.Generic;
 //TODO: give atomic number of single atom
 //TODO: allow atomic number to be used to produce atomic symbol and info on atom
 // See https://aka.ms/new-console-template for more information
+
+
 while (true)
 {
     Start:
